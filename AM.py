@@ -23,20 +23,20 @@ def main():
     f_wave_fft = abs(fft.fft(f))
     f_fs_fft = fft.fftfreq(f_wave_fft.size) 
     
-    plot_signal(t, f, "Signal in time", "time (s)", "amplitude", 0, 0.1)
+    plot_signal(t, f, "Signal in time", "time (s)", "amplitude", 0, 1)
     plot_signal(f_fs_fft, f_wave_fft, "Signal in frequency", "frequency (hz)", "|f(w)|", -0.3, 0.3)
 
     f_carrier = carrier_signal(100, t)
     f_carrier_wave_fft = abs(fft.fft(f_carrier))
     f_carrier_fs_fft = fft.fftfreq(f_carrier_wave_fft.size) 
     
-    plot_signal(t, f_carrier, "Carrier Signal in time", "time (s)", "amplitude", 0, 0.1)
+    plot_signal(t, f_carrier, "Carrier Signal in time", "time (s)", "amplitude", 0, 1)
     plot_signal(f_carrier_fs_fft, f_carrier_wave_fft, "Carrier Signal in frequency", "frequency (hz)", "|f(w)|", -0.3, 0.3)
 
     f_modulated = f*f_carrier
     f_modulated_wave_fft = abs(fft.fft(f_modulated))
     f_modulated_fs_fft = fft.fftfreq(f_modulated_wave_fft.size) 
-    plot_signal(t, f_modulated, "Signal Modulated in time", "time (s)", "amplitude", 0, 0.1)
+    plot_signal(t, f_modulated, "Signal Modulated in time", "time (s)", "amplitude", 0, 1)
     plot_signal(f_modulated_fs_fft, f_modulated_wave_fft, "Signal Modulated in frequency", "frequency (hz)", "|f(w)|", -0.3, 0.3)
     plt.show()
 
